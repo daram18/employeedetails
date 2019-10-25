@@ -1,1 +1,39 @@
 /* You can add global styles to this file, and also import other style files */
+div.sm-jumbotron{
+    margin: 0px;
+    padding: 2rem;
+    background-color: #62bdea;
+    color: white;
+    }
+    button.btn-submit{
+    background-color: #1873b9;
+    color: white;
+    width: 100%;
+    }
+    button.btn-submit:focus,button.btn-submit:hover{
+    background-color: #62bdea;
+    }
+    input.ng-invalid.ng-dirty{
+        border-bottom-color: red !important;
+        box-shadow: red !important;
+    }
+    div.validation-error{
+    color: red;
+    }
+    table, td, th {
+        border: 1px solid black;
+      }
+      
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+      
+      th {
+        text-align: center;
+        height: 50px;
+      }
+
+      td {
+          height: 10px;
+      }

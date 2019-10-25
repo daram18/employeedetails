@@ -1,0 +1,55 @@
+<div class="row">
+  <div class="col s8 offset-s2">
+    <div class="card">
+      <div class="sm-jumbotron center-align">
+        <h4>Submit Employee Details</h4>
+      </div>
+      <form class="col s12 white" #EmployeeRegistrationForm="ngForm" *ngIf="!submitted" (ngSubmit)="onSubmit()" autocomplete="off" novalidate >
+        <div class="row">
+          <div class="input-field col s6">
+            <input type="text" class="validate" name="FirstName" #FirstName="ngModel" [(ngModel)]="employee.FirstName"
+              required>
+            <label date-error="Required Field!">First Name</label>
+          </div>
+          <div class="input-field col s6">
+            <input type="text" class="validate" name="LastName" #LastName="ngModel" [(ngModel)]="employee.LastName"
+              required>
+            <label>Last Name</label>
+          </div>
+          <div class="input-field col s6">
+            <input type="text" class="validate" name="Email" #Email="ngModel" [(ngModel)]="employee.Email" required
+              [pattern]="emailpattern">
+            <label data-error="Invalid email">Email</label>
+          </div>
+          <div class="input-field col s6">
+            <input type="text" class="validate" name="Job" #Job="ngModel" [(ngModel)]="employee.Job" required>
+            <label>Job</label>
+          </div>
+          <div class="input-field col s6">
+           
+            <input type="date" class="validate" name="HiringDate" #HiringDate="ngModel"
+              [(ngModel)]="employee.HiringDate" placeholder="" required>
+              <label>Hiring Date</label>
+            
+          </div>
+          <div class="input-field col s6">
+            <input type="text" class="validate" name="Department" #Department="ngModel"
+              [(ngModel)]="employee.Department" required>
+            <label>Department</label>
+          </div>
+          <div class="input-field col s6">
+            <input type="text" class="validate" name="Salary" #Salary="ngModel" [(ngModel)]="employee.Salary" required>
+            <label>Salary</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <button class="btn-large btn-submit" [disabled]="!EmployeeRegistrationForm.valid"
+              type="submit">Submit</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</div>

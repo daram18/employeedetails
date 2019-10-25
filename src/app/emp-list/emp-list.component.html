@@ -1,0 +1,71 @@
+<!-- Editable table -->
+<div class="row">
+  <div class="card">
+    <div class="sm-jumbotron center-align">
+      <h2>Employee List</h2>
+    </div>
+    <div class="card-body">
+      <div id="table" class="table-editable">
+        <span class="table-add float-right mb-3 mr-2" style="float: right;">
+          <a class="text-success" (click)="add()">
+            <button btn-large style="background-color: dodgerblue; color:white; align-self: right; margin: 2rem;">Add</button>
+          </a>
+        </span>
+<div style="margin: 2rem;">
+        <table>
+          <thead style="background-color: gray;">
+          <tr>
+            <th class="text-center">First Name</th>
+            <th class="text-center">Last Name</th>
+            <th class="text-center">Email</th>
+            <th class="text-center">Job</th>
+            <th class="text-center">Hiring Date</th>
+            <th class="text-center">Department</th>
+            <th class="text-center">Salary</th>
+            <th class="text-center"></th>
+          </tr>
+          </thead>
+          <tr *ngFor="let employee of employeeList; let id = index">
+            <td>
+              <span (keyup)="changeValue(id, 'firstname', $event)" (blur)="updateList(id, 'firstname', $event)"
+                contenteditable="true">{{employee.firstname}}</span>
+            </td>
+            <td>
+              <span contenteditable="true" (keyup)="changeValue(id, 'lastname', $event)"
+                (blur)="updateList(id, 'lastname', $event)">{{employee.lastname}}</span>
+            </td>
+            <td>
+              <span contenteditable="true" (keyup)="changeValue(id, 'email', $event)"
+                (blur)="updateList(id, 'email', $event)">{{employee.email}}</span>
+            </td>
+            <td>
+              <span contenteditable="true" (keyup)="changeValue(id, 'job', $event)"
+                (blur)="updateList(id, 'job', $event)">{{employee.job}}</span>
+            </td>
+            <td>
+              <span contenteditable="true" (keyup)="changeValue(id, 'hiringdate', $event)"
+                (blur)="updateList(id, 'hiringdate', $event)">{{employee.hiringdate}}</span>
+            </td>
+            <td>
+              <span contenteditable="true" (keyup)="changeValue(id, 'department', $event)"
+                (blur)="updateList(id, 'department', $event)">{{employee.department}}</span>
+            </td>
+            <td>
+              <span contenteditable="true" (keyup)="changeValue(id, 'salary', $event)"
+                (blur)="updateList(id, 'salary', $event)">{{employee.salary}}</span>
+            </td>
+            <td>
+              <span class="table-remove">
+                <button type="button" mdbBtn color="danger" rounded="true" size="sm" class="my-0"
+                  (click)="remove(id)">Remove</button>
+              </span>
+            </td>
+          </tr>
+        </table>
+        
+</div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Editable table -->
